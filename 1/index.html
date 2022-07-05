@@ -4,13 +4,49 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hi, man.</title>
+    <title>easy JavaScript</title>
+    <style type="text/css">
+        body{
+            margin:  40px auto;
+        }
+        div{
+            text-align: center;
+        }
+        input, button,span { 
+         font-size: 120%; 
+         font-family: Verdana, Arial, Helvetica, sans-serif; 
+         color: #336; 
+         padding: auto;
+        }
+       </style>
 </head>
 <body>
-    <div id="content">Hi, Man!</div>
+    <div id="addition">
+        <input id="num1" type="text" value="3">
+        +
+        <input id="num2" type="text" value="4">
+        <button id="btnRun"> = </button>
+        <span id="result"></span>
+    </div>
     <script>
         window.onload = function(){
-            alert('Hi, Man!');
+            let num1 = document.getElementById("num1");
+            let num2 = document.getElementById("num2");
+            let btnRun = document.getElementById("btnRun");
+
+            btnRun.onclick = function(){
+                let x = num1.value;
+                let y = num2.value;
+                let res = Number(x)+Number(y);
+                document.getElementById("result").innerHTML = res;
+                btnRun.disabled = true;
+            }
+            num1.onkeydown = function(){
+                btnRun.disabled=false;
+            }
+            num2.onkeydown = function(){
+                btnRun.disabled=false;
+            }
         }
     </script>
 </body>
