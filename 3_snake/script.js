@@ -36,14 +36,6 @@ window.onload = function () {
 	var m1 = new Matrix('matrix1', 20, 20);
 	m1.createMatrix();
 	m1.setCell(5, 5, true);
-
-	var m2 = new Matrix('matrix2', 10, 10);
-	m2.createMatrix();
-	m2.setCell(5, 5, true);
-	m2.setCell(5, 3, true);
-
-
-
 };
 
 
