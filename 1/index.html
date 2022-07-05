@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>easy JavaScript</title>
     <style type="text/css">
-        body{
-            margin:  40px auto;
+        body {
+            margin: 40px auto;
         }
-        div{
+
+        div {
             text-align: center;
         }
-        input, button,span { 
-         font-size: 120%; 
-         font-family: Verdana, Arial, Helvetica, sans-serif; 
-         color: #336; 
-         padding: auto;
+
+        input,
+        button,
+        span {
+            font-size: 120%;
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            color: #336;
+            padding: auto;
         }
-       </style>
+    </style>
 </head>
+
 <body>
     <div id="addition">
         <input id="num1" type="text" value="3">
@@ -29,25 +35,26 @@
         <span id="result"></span>
     </div>
     <script>
-        window.onload = function(){
+        window.onload = function () {
             let num1 = document.getElementById("num1");
             let num2 = document.getElementById("num2");
             let btnRun = document.getElementById("btnRun");
 
-            btnRun.onclick = function(){
+            btnRun.onclick = function () {
                 let x = num1.value;
                 let y = num2.value;
-                let res = Number(x)+Number(y);
+                let res = Number(x) + Number(y);
                 document.getElementById("result").innerHTML = res;
                 btnRun.disabled = true;
             }
-            num1.onkeydown = function(){
-                btnRun.disabled=false;
+            num1.onkeydown = function () {
+                btnRun.disabled = false;
             }
-            num2.onkeydown = function(){
-                btnRun.disabled=false;
+            num2.onkeydown = function () {
+                btnRun.disabled = false;
             }
         }
     </script>
 </body>
+
 </html>
