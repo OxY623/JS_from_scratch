@@ -1,65 +1,48 @@
 //
 // создание матрицы.
 //
-let x = 20;
-let y = 20;
+function Matrix(containerId,rows,cols) {
+    let _this = this;
+	_this.containerId = containerId;
+	_this.rows = rows;
+	_this.cols = cols;
+    _this.createMatrix = function() {
+		let matrix = document.getElementById(_this.containerId);
+		let n = _this.rows* _this.cols;
+        matrix.innerHTML = '';
+		for (let i = 0; i < n; i++) {
+			let div = document.createElement("div");
+			div.className = "cell";
+			matrix.appendChild(div);
+		  }
+		}
+	_this.getCell = function(row,col){
 
-let count = 0;
-function createMatrix() {
-  let matrix = document.getElementById("matrix");
-  let n = x * y;
+	}
+	_this.setCell = function(row,col,val){
+		let index = (--row) * _this.cols  + (--col);
+		let matrix = document.getElementById(_this.containerId);
+		let cell = matrix.children[index];
 
-  for (let i = 0; i < n; i++) {
-    let div = document.createElement("div");
-    div.className = "cell";
-    matrix.appendChild(div);
-  }
-}
+		if (val){
+			cell.className = 'cell on';
+		} else cell.className = 'cell'
+	}
+   }
 
-let cellNumber = function (row, col) {
-    let index = --row * 20 + --col;
-    return index;
-  };
-//
-// чтение ¤чейки матрицы.
-//
-function getCell(row, col) {
-  // функци¤ принимает координаты ¤чейки
-  // должна вернуть true, если она закрашена,
-  // false, если не закрашена.
- 
-  let matrix = document.getElementById("matrix");
-  let cell = matrix.children[cellNumber(row, col)];
-  return cell.style.backgroundColor == "red";
-}
 
-//
-// Yстановка ¤чейки матрицы.
-//
-function setCell(row, col, val) {
-  // Функция принимает координаты ячейки
-  // если val == true, закрашивает ячейку,
-  // иначе убирает закраску.
-  let cell = matrix.children[cellNumber(row, col)];
-  if (val) {
-    cell.style.backgroundColor = "red";
-  } else {
-    cell.style.backgroundColor = " ";
-  }
-}
 
-function getRandomNumber() {
-	return Math.floor(Math.random()*20);
-  }
-//
-// точка входа.
-//
 window.onload = function () {
-  createMatrix();
-  setCell(getRandomNumber(),getRandomNumber(), true);
-  setCell(getRandomNumber(),getRandomNumber(), true);
-  
-  setCell(getRandomNumber(),getRandomNumber(), false);
+	var m1 = new Matrix('matrix1', 20, 20);
+	m1.createMatrix();
+	m1.setCell(5, 5, true);
+
+	var m2 = new Matrix('matrix2', 10, 10);
+	m2.createMatrix();
+	m2.setCell(5, 5, true);
+	m2.setCell(5, 3, true);
+
+
 
 };
 
