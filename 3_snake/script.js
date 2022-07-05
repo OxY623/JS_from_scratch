@@ -1,46 +1,66 @@
 //
-// —оздание матрицы.
+// создание матрицы.
 //
-function createMatrix()
-{
-	var matrix = document.getElementById('matrix');
-	var n = 20 * 20;	
-	
-	for (var i = 0; i < n; i++)
-	{
-		var div = document.createElement('div');
-		div.className = 'cell';
-		matrix.appendChild(div);
-	}
+let x = 20;
+let y = 20;
+
+let count = 0;
+function createMatrix() {
+  let matrix = document.getElementById("matrix");
+  let n = x * y;
+
+  for (let i = 0; i < n; i++) {
+    let div = document.createElement("div");
+    div.className = "cell";
+    matrix.appendChild(div);
+  }
+}
+
+let cellNumber = function (row, col) {
+    let index = --row * 20 + --col;
+    return index;
+  };
+//
+// чтение ¤чейки матрицы.
+//
+function getCell(row, col) {
+  // функци¤ принимает координаты ¤чейки
+  // должна вернуть true, если она закрашена,
+  // false, если не закрашена.
+ 
+  let matrix = document.getElementById("matrix");
+  let cell = matrix.children[cellNumber(row, col)];
+  return cell.style.backgroundColor == "red";
 }
 
 //
-// „тение ¤чейки матрицы.
+// Yстановка ¤чейки матрицы.
 //
-function getCell(row, col)
-{
-	// ‘ункци¤ принимает координаты ¤чейки
-	// должна вернуть true, если она закрашена,
-	// false, если не закрашена.
+function setCell(row, col, val) {
+  // Функция принимает координаты ячейки
+  // если val == true, закрашивает ячейку,
+  // иначе убирает закраску.
+  let cell = matrix.children[cellNumber(row, col)];
+  if (val) {
+    cell.style.backgroundColor = "red";
+  } else {
+    cell.style.backgroundColor = "";
+  }
 }
 
+function getRandomNumber() {
+	return Math.floor(Math.random()*20);
+  }
 //
-// ”становка ¤чейки матрицы.
+// точка входа.
 //
-function setCell(row, col, val)
-{
+window.onload = function () {
+  createMatrix();
+  setCell(getRandomNumber(),getRandomNumber(), true);
+  setCell(getRandomNumber(),getRandomNumber(), true);
+  
+  setCell(getRandomNumber(),getRandomNumber(), false);
 
-	// ‘ункци¤ принимает координаты ¤чейки
-	// если val == true, закрашивает ¤чейку,
-	// иначе убирает закраску.
-}
+};
 
-//
-// “очка входа.
-//
-window.onload = function()
-{
-	createMatrix();	
-	// setCell(1, 1, true);
 
-}				
