@@ -44,7 +44,7 @@ function setCell(row, col, val) {
   if (val) {
     cell.style.backgroundColor = "red";
   } else {
-    cell.style.backgroundColor = "";
+    cell.style.backgroundColor = " ";
   }
 }
 
