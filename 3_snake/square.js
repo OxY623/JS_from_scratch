@@ -18,9 +18,18 @@ function Square(row,col,course,matrix){
 			case 'right':
 				self.body.y++;
 				break;
+            case 'left':
+                self.body.y--;
+                break;
+            case 'top':
+                    self.body.x--;
+                    break;
+            case 'bottom':
+                    self.body.x++;
+                    break;
 		}
 		
-        // self.matrix.setCell(last_body[x], last_body[y], false);
+       
         self.matrix.setCell(self.body.x, self.body.y, true);
 	}
 }
