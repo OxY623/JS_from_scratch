@@ -2,13 +2,13 @@
 // создание матрицы.
 //
 function Matrix(containerId,rows,cols) {
-    let _this = this;
-	_this.containerId = containerId;
-	_this.rows = rows;
-	_this.cols = cols;
-    _this.createMatrix = function() {
-		let matrix = document.getElementById(_this.containerId);
-		let n = _this.rows* _this.cols;
+    
+	this.containerId = containerId;
+	this.rows = rows;
+	this.cols = cols;
+    this.createMatrix = function() {
+		let matrix = document.getElementById(this.containerId);
+		let n = this.rows* this.cols;
         matrix.innerHTML = '';
 		for (let i = 0; i < n; i++) {
 			let div = document.createElement("div");
@@ -16,17 +16,15 @@ function Matrix(containerId,rows,cols) {
 			matrix.appendChild(div);
 		  }
 		}
-	_this.getCell = function(row,col){
+	this.getCell = function(row,col){
 
 	}
-	_this.setCell = function(row,col,val){
-		let index = (--row) * _this.cols  + (--col);
-		let matrix = document.getElementById(_this.containerId);
+	this.setCell = function(row,col,val){
+		let index = (--row) * this.cols  + (--col);
+		let matrix = document.getElementById(this.containerId);
 		let cell = matrix.children[index];
 
-		if (val){
-			cell.className = 'cell on';
-		} else cell.className = 'cell';
+		cell.className = (val ? 'cell on' : 'cell');
 	}
    }
 
