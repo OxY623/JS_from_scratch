@@ -1,35 +1,40 @@
-function Square(row,col,course,matrix){
-    this.body =  {x : row, y : col};
-    this.matrix = matrix;
-    this.course = course;
- 
-    let self = this;
+function Square(row, col, matrix) {
+  this.body = { x: row, y: col };
+  this.matrix = matrix;
 
-    this.create = function(){
-        this.matrix.setCell(self.body.x, self.body.y, true);
+  let self = this;
+
+  this.create = function () {
+    this.matrix.setCell(self.body.x, self.body.y, true);
+  };
+  this.move = function () {
+    let direction = ["right", "left", "top", "bottom"];
+    self.matrix.setCell(self.body.x, self.body.y, false);
+    addEventListener("keydown", function (event) {
+      if (event.keyCode == 38) {
+        self.course = direction[2];
+      } else if (event.keyCode == 40) {
+        self.course = direction[3];
+      } else if (event.keyCode == 37) {
+        self.course = direction[1];
+      } else self.course = direction[0];
+    });
+
+    switch (self.course) {
+      case "right":
+        self.body.y++;
+        break;
+      case "left":
+        self.body.y--;
+        break;
+      case "top":
+        self.body.x--;
+        break;
+      case "bottom":
+        self.body.x++;
+        break;
     }
-    this.move = function()
-	{
-		self.matrix.setCell(self.body.x, self.body.y, false);
-	
-		
-		switch(self.course)
-		{
-			case 'right':
-				self.body.y++;
-				break;
-            case 'left':
-                self.body.y--;
-                break;
-            case 'top':
-                    self.body.x--;
-                    break;
-            case 'bottom':
-                    self.body.x++;
-                    break;
-		}
-		
-       
-        self.matrix.setCell(self.body.x, self.body.y, true);
-	}
+
+    self.matrix.setCell(self.body.x, self.body.y, true);
+  };
 }
