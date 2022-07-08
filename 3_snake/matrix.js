@@ -26,16 +26,12 @@ function Matrix(containerId,rows,cols) {
 
 		if (val){
 			cell.className = 'cell on';
-		} else cell.className = 'cell'
+		} else cell.className = 'cell';
 	}
    }
 
 
 
-window.onload = function () {
-	var m1 = new Matrix('matrix1', 20, 20);
-	m1.createMatrix();
-	m1.setCell(5, 5, true);
-};
+
 
 
