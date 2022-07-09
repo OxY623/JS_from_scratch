@@ -7,6 +7,6 @@ window.onload = function () {
     let sqr1 = new Square( RandomNums(1,20),  RandomNums(1,20),m1);
     sqr1.create();
    
-    let repeat = setInterval(sqr1.move, 500)
+    let repeat = setInterval(sqr1.move, 200)
     
 };

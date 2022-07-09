@@ -36,14 +36,14 @@ function Square(row, col, matrix) {
     }
     if (self.body.x > 20){
       self.body.x = 20;
-    } else if self.body.x < 1 {
+    } else if (self.body.x < 1) {
       self.body.x =1;
     } 
 
     if (self.body.y > 20){
       self.body.y = 20;
-    } else if self.body.y < 1 {
-      self.body.y =1;
+    } else if (self.body.y < 1) {
+      self.body.y = 1;
     } 
 
     self.matrix.setCell(self.body.x, self.body.y, true);
