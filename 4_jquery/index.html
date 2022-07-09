@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <script type="text/javascript" src="utils.js"></script>
+    <script src="jquery.js"></script>
+    <script src="onload.js"></script>
+    <style>
+        img {
+            height: 100px;
+        }
+
+        .class1 {
+            font-size: 16pt;
+        }
+
+        .class2 {
+            font-size: 7pt;
+        }
+    </style>
+ 
+</head>
+
+<body>
+    <a href="http://jquery.com/">jQuery</a>
+    <div class="element">
+        <div id="header">
+            <h1><a href="/" title="homepage">Title</a></h1>
+            <h2>Sub-title <span>small description</span></h2>
+        </div>
+        <div id="wrapper" title="title">
+            <div id="content">
+                <div class="post">
+                    <h3>Post Title</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed viverra tempus sapien.
+                        Cras condimentum, tellus id lacinia fermentum, tortor lectus tincidunt sapien,
+                        vel varius augue tortor vel tortor.</p>
+                    <span>Image Title</span>
+                    <img src="image1.jpg" alt="Image Alt Text" />
+                    <p><span>ыыыыыыыыыыыыыыыыыыыыыыыыыы</span>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Sed viverra tempus sapien.
+                        Cras condimentum, tellus id lacinia fermentum, tortor lectus tincidunt sapien,
+                        vel varius augue tortor <b>vel</b> tortor.</p>
+                    <span class="inner-banner">Banner Text
+                    </span>
+                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed viverra tempus sapien.
+                        Cras condimentum, tellus id lacinia fermentum, tortor lectus tincidunt sapien,
+                        <font> some other <b>text</b> inside </font>
+                        vel varius augue tortor vel tortor.
+                    </p>
+                </div>
+                <span id="banner">
+                    <img src="banner1.jpg" alt="Big Banner" />
+                </span>
+                <pre class="post">
+					<h3>Post Title</h3>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed viverra tempus sapien.
+					   Cras condimentum, tellus id lacinia fermentum, tortor lectus tincidunt sapien,
+					   vel varius augue tortor vel tortor.</p>
+					<span>Image Title</span>
+					<img src="image2.jpg" alt="Image Alt Text"/>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed viverra tempus sapien.
+					   Cras condimentum, tellus id lacinia fermentum, tortor lectus tincidunt sapien,
+					   vel varius augue tortor vel tortor.</p>
+					<span class="inner-banner">Banner Text</span>
+					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed viverra tempus sapien.
+					   Cras condimentum, tellus id lacinia fermentum, tortor lectus tincidunt sapien,
+					   vel varius augue tortor vel tortor.</p>
+				</pre>
+            </div>
+        </div>
+        <div id="sidebar">
+            <ul>
+                <li><a href="/item0.html">Menu Item 0</a></li>
+                <li><a href="/item1.html">Menu Item 1</a></li>
+                <li><a href="/item2.html">Menu Item 2</a></li>
+                <li><a href="/item3.html">Menu Item 3</a></li>
+            </ul>
+        </div>
+        <div></div>
+        <div id="footer">
+            Copyright &copy; 2010
+        </div>
+
+        <form>
+            <input type="text" value="text"><br />
+            <input type="password"><br />
+
+            <select multiple size=6>
+                <option>One</option>
+                <option>Two</option>
+                <option>Three</option>
+                <option>Four</option>
+                <option>Five</option>
+                <option>Six</option>
+                <option>Seven</option>
+            </select>
+            <br />
+            <input type="button" id="button" value="button">
+            <input type="button" id="buttonAppend" value="buttonAppend">
+            <input type="button" id="buttonSlideDown" value="slideDown">
+            <input type="button" id="buttonSlideUp" value="slideUp">
+        </form>
+    </div>
+    
+    <script type="text/javascript">
+        let elems =
+        // Id и ClassName
+        //$('#sidebar');
+        //$('.post');				
+        //$('div');					
+        //$('div.post');			
+        
+        // Иерархия
+        //$('div span');                   
+        //$('div').find('span').css('border','solid 8px red');  
+        //$('div > span');        
+        //$('div, span');
+
+        //$('span + img');        
+        //$('#banner').prev();    
+        //$('#banner').next();  	
+
+        //$('*');                
+       // $('p > *');            	
+        //$('body').children(); 
+        //$('p').parent();       	
+        //$('p').parents();      	
+        //$('p').parents('div'); 	
+        
+        // Фильтры
+        //$('div:first');     	
+        //$('div:last');      	
+        //$('div:not(.post)'); 	
+        //$('div:even');
+        //$('div:odd');       	
+        //$('div div:eq(3)');     	
+        //$('div:gt(3)');     	
+        //$('div:lt(3)');     	
+        $(':header');       	
+
+        //$('div:contains("Copyright")'); 	
+        //$('div:empty');   
+        //$('div:has(p)');  
+        //$('div.post')
+        //$('div').filter('.post') 			
+        //$('div:hidden');         		
+        //$('div:visible');        			
+        
+        //$("div[class]");           								// все div с атрибутом class
+        //$("div[title = 'title']");   								// все div с атрибутом title == "title"
+        //$("div[title != 'title']");  								// все div с атрибутом title не равным "title"
+        //$("div[title ^= 'ti']");  								// все div с атрибутом title начинающимся с "ti"
+        //$("div[title $= 'le']");  								// все div с атрибутом title заканчивающимся на "le"
+        //$("div[title *= 'itl']");  								// все div с атрибутом title содержащим "itl"
+
+        //$(":password");            
+        //$(":radio");           
+        //$("input:enabled");    
+        //$("input:checked");   
+
+        //$("div[title = 'title']:visible:has(p)"); 	
+
+        //$("form select option:selected"); 																	// выбранные элементы select 
+        //$("form :radio[name=some]:checked"); 															// получение выбранного значения радиобатона с именем some
+        //$("form :checkbox:checked"); 																			ы// выбор всех выбранных чекбоксов
+        elems.css('border', '3px solid red');
+        //changeBorder(elems);
+    </script>
+
+</body>
+
+</html>
