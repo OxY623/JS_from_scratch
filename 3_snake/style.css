@@ -23,7 +23,10 @@
 {
 	background-color: red;
 }
-
+#matrix1 .fruit
+{
+	background-color: green;
+}
 #matrix2
 {
 	float: left;
