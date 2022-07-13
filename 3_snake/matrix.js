@@ -7,7 +7,7 @@ function Matrix(container,rows,cols) {
 	this.rows = rows;
 	this.cols = cols;
 	let _this = this;
-    this.createMatrix = function() {
+    this.create = function() {
 		
 		let n = _this.rows* _this.cols;
         _this.$container.empty();
@@ -29,6 +29,14 @@ function Matrix(container,rows,cols) {
 		let cell = this.getCellElement(row,col);
 		cell.toggleClass('on',val);
 
+	}
+	this.getFruit = function(row, col) {
+		return this.getCellElement(row, col).hasClass('fruit');
+	}
+
+	this.setFruit = function(row, col, val) {
+		var cell = this.getCellElement(row, col);	
+		cell.toggleClass('fruit', val);
 	}
    }
 
