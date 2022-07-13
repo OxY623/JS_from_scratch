@@ -17,15 +17,18 @@ function Matrix(container,rows,cols) {
 			_this.$container.append($div);
 		  }
 		}
-	this.getCell = function(row,col){
+	this.getCellElement = function(row,col){
+       let indexOfCell =  (--row) * this.cols  + (--col);
+	   return _this.$container.find('cell').eq(indexOfCell);
+	}
 
+	this.getCell =function(row,col){
+		return _this.getCellElement(row,col).hasClass('on');
 	}
 	this.setCell = function(row,col,val){
-		let index = (--row) * this.cols  + (--col);
-	
-		let cell = _this.$container.children().eq(index);
+		let cell = this.getCellElement(row,col);
+		cell.toggleClass('on',val);
 
-		cell.className = (val ? 'cell on' : 'cell');
 	}
    }
 
