@@ -30,7 +30,7 @@ function Snake(rol,col,course, lenght) {
                 headRow++;
                 break;
         }
-        _this.body.unshift({row:headRow,col:headCol});
+        _this.body.shift({row:headRow,col:headCol});
         return _this.body.pop();
     }
 

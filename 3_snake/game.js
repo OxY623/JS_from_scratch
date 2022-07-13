@@ -23,7 +23,7 @@ function Game(matrix, snake) {
   };
   this.makeSnake = function(){
     if (_this.snake){
-        for (let i =0; i < _this.snake.body.length; i++){
+        for ( i =0; i < _this.snake.body.length; i++){
             _this.matrix.setCell(_this.snake.body[t].row,_this.snake.body[t].col,false);
         }
     }
@@ -40,8 +40,8 @@ function Game(matrix, snake) {
 
 
   this.gameplay = function() {
-    var tail = _this.snake.move();
-    var head = _this.snake.body[0];
+   let tail = _this.snake.move();
+   let head = _this.snake.body[0];
 
     if ((head.row > _this.matrix.rows || head.row < 1 ||
         head.col > _this.matrix.cols || head.col < 1) ||
@@ -64,8 +64,8 @@ function Game(matrix, snake) {
 
 
 this.setRandomFruit = function() {
-    var fruitRow = getRandomInt(1, _this.matrix.rows);
-    var fruitCol = getRandomInt(1, _this.matrix.cols);
+   let fruitRow = getRandomInt(1, _this.matrix.rows);
+   let fruitCol = getRandomInt(1, _this.matrix.cols);
     _this.matrix.setFruit(fruitRow, fruitCol, true);
 }
 
