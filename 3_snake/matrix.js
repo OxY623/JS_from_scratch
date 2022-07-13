@@ -19,7 +19,7 @@ function Matrix(container,rows,cols) {
 		}
 	this.getCellElement = function(row,col){
        let indexOfCell =  (--row) * this.cols  + (--col);
-	   return _this.$container.find('cell').eq(indexOfCell);
+	   return _this.$container.find('.cell').eq(indexOfCell);
 	}
 
 	this.getCell =function(row,col){
