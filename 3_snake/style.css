@@ -1,12 +1,12 @@
 
 
 #matrix1
-{
-	float: left;
+{   margin-left: auto;
+    margin-right: auto;
 	width: 400px;
 	height: 400px;
-	border-top: 1px solid #999;
-	border-left: 1px solid #999;	
+	border-top: 1px solid rgb(5, 249, 103);
+	border-left: 1px solid rgb(5, 249, 103);	
 }
 
 #matrix1 .cell
@@ -14,8 +14,9 @@
 	float: left;
 	width: 19px;
 	height: 19px;	
-	border-bottom: 1px solid #999;
-	border-right: 1px solid #999;	
+	border-bottom: 1px solid rgb(5, 249, 103);
+	border-right: 1px solid rgb(5, 249, 103);
+	background-image: url('image.jpg');	
 }
 
 #matrix1 .on

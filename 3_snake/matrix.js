@@ -1,19 +1,20 @@
 //
 // создание матрицы.
 //
-function Matrix(containerId,rows,cols) {
+function Matrix(container,rows,cols) {
     
-	this.containerId = containerId;
+	this.$container = $(container);
 	this.rows = rows;
 	this.cols = cols;
+	let _this = this;
     this.createMatrix = function() {
-		let matrix = document.getElementById(this.containerId);
-		let n = this.rows* this.cols;
-        matrix.innerHTML = '';
+		
+		let n = _this.rows* _this.cols;
+        _this.$container.empty();
 		for (let i = 0; i < n; i++) {
-			let div = document.createElement("div");
-			div.className = "cell";
-			matrix.appendChild(div);
+			let $div = $(' <div class="cell"> </div>');
+			
+			_this.$container.append($div);
 		  }
 		}
 	this.getCell = function(row,col){
@@ -21,8 +22,8 @@ function Matrix(containerId,rows,cols) {
 	}
 	this.setCell = function(row,col,val){
 		let index = (--row) * this.cols  + (--col);
-		let matrix = document.getElementById(this.containerId);
-		let cell = matrix.children[index];
+	
+		let cell = _this.$container.children().eq(index);
 
 		cell.className = (val ? 'cell on' : 'cell');
 	}
