@@ -1,10 +1,20 @@
 $(document).ready(function(){
-let num = 1;
+/* let num = 1;
 let list1= list(0, 1000000 );
 let search1 = binary_search(list1,num);
 alert(search1);
-
-  
+ */
+factorial = function(n,result){
+    alert(n);
+    alert(result);
+    result = result || 1;
+   
+    if (!n){ alert(result);
+        return result;}
+    else  alert(result); return factorial(n-1,result*n);
+}
+let a = factorial(5);
+alert(a)
 });
 
 function list(min,max){
