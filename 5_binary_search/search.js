@@ -1,6 +1,6 @@
 $(document).ready(function(){
-let num = 10;
-let list1= list(0,50);
+let num = 1;
+let list1= list(0, 1000000 );
 let search1 = binary_search(list1,num);
 alert(search1);
 
@@ -13,7 +13,7 @@ function list(min,max){
         list[i]=min;
      }
     
-     alert(list);
+    //  alert(list);
      return list;
 }
 function binary_search(list,item){
