@@ -46,4 +46,26 @@ function binary_search(list,item){
         
    
     }
+
+    sum = function(array) {
+        ...     return (array.length === 0) ? 0 : array[0] + sum(array.slice(1));
+        ... }
+    
+    countIndex = function(array){
+        if (array.length==0){return 0} else{ return 1+countIndex(array.slice(1);)}
+    }
+    
+    max = function(array){
+        if (array.length==2){
+            if(array[0]>array[1]){
+                return array[0];
+            } else { return array[1];}
+    
+        let sub_max=max(array.slice(1));
+        if (array[0]>sub_max){
+            retutn array[0];
+        } else { return sub_max;}
+        }
+    }
 }
+
